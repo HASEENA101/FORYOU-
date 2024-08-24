@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<style>
+h1 {text-align: center;}
+body {text-align: center;}
+form {text-align: center;}
+</style>
+    <title>For You!</title>
+    <style>
+        body {
+            background-color: #ffe5e5;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            overflow: hidden; /* Prevent scrollbars */
+            position: relative; /* Allow absolute positioning of child elements */
+        }
+
+        h1 {
+            margin-top: 50px; /* Add margin for spacing from top */
+        }
+
+        img {
+            width: 250px;
+            display: block;
+            margin: 0 auto; /* Center the image */
+        }
+
+        input[type="submit"] {
+            background-color: white;
+            border: 2px solid black; /* Add border style */
+            color: black;
+            padding: 12px 24px;
+            margin: 20px; /* Add margin for spacing */
+            cursor: pointer;
+            font-size: 16px; /* Increase font size for better readability */
+            text-decoration: none; /* Remove underline if any */
+            position: absolute; /* Enable absolute positioning */
+        }
+
+        /* Optional: Add hover effect for button */
+        input[type="submit"]:hover {
+            background-color: #f0f0f0;
+        }
+    </style>
+</head>
+<body>
+<br><br><br><br>
+    <picture>
+        <img src="https://media.tenor.com/3bDvSVpiwjoAAAAi/peach-goma-phone.gif" alt="Animated Peach GIF">
+    </picture>
+    <h1>Maan jao na yrr! Kitna Bhav khaoge &#128557;</h1>
+    <p>Aisa nahi karte hai yrrr.. &#128557;</p>
+    <p>Bahot gakat baat hai yrrr &#128549;</p>
+    
+    <form method="post" action="Yes.html">
+        <input type="submit" value="Yes">
+    </form>
+    
+    <input type="submit" id="no-button" value="No">
+    
+    <script>
+        function moveButtonRandomly() {
+            const button = document.getElementById('no-button');
+            const bodyWidth = document.body.clientWidth;
+            const bodyHeight = document.body.clientHeight;
+
+            // Button dimensions
+            const buttonWidth = button.offsetWidth;
+            const buttonHeight = button.offsetHeight;
+
+            // Random position within the body dimensions
+            const randomX = Math.random() * (bodyWidth - buttonWidth);
+            const randomY = Math.random() * (bodyHeight - buttonHeight);
+
+            // Apply random position
+            button.style.left = `${randomX}px`;
+            button.style.top = `${randomY}px`;
+        }
+
+        // Move the button when the page loads
+        window.onload = moveButtonRandomly;
+
+        // Move the button to a new random position every 2 seconds
+        setInterval(moveButtonRandomly, 2000);
+    </script>
+</body>
+</html>
